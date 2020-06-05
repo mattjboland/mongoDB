@@ -1,11 +1,11 @@
 import pymongo
 import os
-from os import path
-if path.exists("env.py"):
+
+if os.path.exists("env.py"):
     import env
 
 MONGODB_URI = os.environ.get("MONGO_URI")
-DBS_NAME = "MyTestDB"
+DBS_NAME = "myTestDB"
 COLLECTION_NAME = "myFirstMDB"
 
 
