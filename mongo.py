@@ -22,6 +22,16 @@ conn = mongo_connect(MONGODB_URI)
 
 coll = conn[DBS_NAME][COLLECTION_NAME]
 
+new_docs = [{'first': 'terry', 'last': 'pratchett', 'dob': '28/04/1948',
+            'hair_colour': 'not much', 'occupation': 'writer',
+             'nationality': 'english'}, {'first': 'george',
+            'last': 'rr martin', 'dob': '20/09/1948',
+                                         'hair_colour': 'not much',
+                                         'occupation': 'writer',
+                                         'nationality': 'american'}]
+
+coll.insert_many(new_docs)
+
 documents = coll.find()
 
 for doc in documents:
